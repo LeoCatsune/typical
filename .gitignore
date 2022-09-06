@@ -1,2 +1,5 @@
 node_modules
 dist
+
+# to help prevent accidental uploading of tokens.
+src/config.ts
