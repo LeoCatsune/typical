@@ -1,5 +1,5 @@
 export default {
-	TOKEN: "OTY2MjIzNjg3MjkwMzIyOTU1.GikCYZ.LA0laVQfRLs_dAMSor_fqxDtLfUiLAU3zU-fIY"
+	TOKEN: "your-token-here"
 } as Config;
 
 type Config = {
