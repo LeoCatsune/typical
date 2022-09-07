@@ -6,9 +6,10 @@
   - [x] Activity Status
   - [x] Chat (`/`) commands
   - [x] User commands
-  - [ ] Message commands
+  - [x] Message commands
   - [ ] Autocomplete
 - [ ] Error Handling
 - [ ] Permissions
   - [ ] Owner
   - [ ] Admin
+- [ ] Documentation

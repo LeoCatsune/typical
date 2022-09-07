@@ -5,6 +5,7 @@ export * as status from "./core/status";
 //? Command Handlers
 export * as chat from "./interactions/chat";
 export * as user from "./interactions/user";
+export * as message from "./interactions/message";
 
 //? Command Publisher
 //* Always keep this last, to ensure command publishing works as expected.
