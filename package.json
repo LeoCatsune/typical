@@ -4,7 +4,7 @@
   "description": "A template for building Discord bots with typescript.",
   "main": "dist/index.js",
   "scripts": {
-    "test": "tsc",
+    "test": "tsc --noemit",
     "build": "tsc",
     "start": "ts-node src/index.ts",
     "start:dev": "ts-node-dev src/index.ts"
