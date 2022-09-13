@@ -26,5 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - name: Copy dummy config
+      run: cp src/config.example.ts src/config.ts
     - run: npm ci
     - run: npm test
