@@ -1,4 +1,4 @@
-import { ApplicationCommandDataResolvable } from "discord.js";
+import { ApplicationCommandDataResolvable, Events } from "discord.js";
 import ExtendedClient from "../../classes/Client";
 import { Command } from "../../classes/Command";
 import Module from "../../classes/Module";
@@ -12,7 +12,7 @@ export default class PublishCommandsModule implements Module {
 	public static id = "interactions.publish";
 
 	constructor(client: ExtendedClient) {
-		client.on("ready", () => this.publish(client));
+		client.on(Events.ClientReady, () => this.publish(client));
 	}
 
 	private publish(client: ExtendedClient) {
