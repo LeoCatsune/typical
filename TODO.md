@@ -8,5 +8,7 @@
   - [x] User commands
   - [x] Message commands
   - [x] Autocomplete
-- [ ] Error Handling
+  - [ ] Components
+  - [ ] Modals
+- [x] Error Handling
 - [ ] Documentation
