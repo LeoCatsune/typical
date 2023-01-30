@@ -7,9 +7,8 @@
   - [x] Chat (`/`) commands
   - [x] User commands
   - [x] Message commands
-  - [ ] Autocomplete
-- [ ] Error Handling
-- [ ] Permissions
-  - [ ] Owner
-  - [ ] Admin
+  - [x] Autocomplete
+  - [ ] Components
+  - [ ] Modals
+- [x] Error Handling
 - [ ] Documentation

@@ -1,25 +1,23 @@
-import { ActivityOptions, ActivityType } from "discord.js";
-import ExtendedClient from "../../classes/Client";
+import { ActivityOptions, ActivityType, Events } from "discord.js";
+import Client from "../../classes/Client";
 import Module from "../../classes/Module";
 
 const activities: ActivityOptions[] = [
-	{type: ActivityType.Watching, name: "over the chats."},
-	{type: ActivityType.Listening, name: "various beeps and boops."}
+	{ type: ActivityType.Watching, name: "over the chats." },
+	{ type: ActivityType.Listening, name: "various beeps and boops." }
 ]
 
-export default class LoggerModule implements Module {
-	public static id = "core.status";
-
-	constructor(client: ExtendedClient) {
-		client.on("ready", () => this.onReady(client));
+export default class StatusModule implements Module {
+	load(client: Client): void {
+		client.on(Events.ClientReady, () => this.onReady(client));
 	}
 
-	onReady(client: ExtendedClient) {
-		client.user?.setActivity({type: ActivityType.Watching, name: "myself start up..."});
+	private onReady(client: Client) {
+		client.user?.setActivity({ type: ActivityType.Watching, name: "myself start up..." });
 		let act = 0;
 		setInterval(() => {
 			client.user?.setActivity(activities[act]);
-			if(++act>=activities.length) act = 0;
+			if (++act >= activities.length) act = 0;
 		}, 30_000);
 	}
 }
