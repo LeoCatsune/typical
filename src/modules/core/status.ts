@@ -1,5 +1,5 @@
 import { ActivityOptions, ActivityType, Events } from "discord.js";
-import ExtendedClient from "../../classes/Client";
+import Client from "../../classes/Client";
 import Module from "../../classes/Module";
 
 const activities: ActivityOptions[] = [
@@ -7,14 +7,12 @@ const activities: ActivityOptions[] = [
 	{ type: ActivityType.Listening, name: "various beeps and boops." }
 ]
 
-export default class LoggerModule implements Module {
-	public static id = "core.status";
-
-	constructor(client: ExtendedClient) {
+export default class StatusModule implements Module {
+	load(client: Client): void {
 		client.on(Events.ClientReady, () => this.onReady(client));
 	}
 
-	onReady(client: ExtendedClient) {
+	private onReady(client: Client) {
 		client.user?.setActivity({ type: ActivityType.Watching, name: "myself start up..." });
 		let act = 0;
 		setInterval(() => {

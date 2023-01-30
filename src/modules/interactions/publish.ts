@@ -8,10 +8,8 @@ export function publish(command: Command) {
 	commands.push(command.data);
 }
 
-export default class PublishCommandsModule implements Module {
-	public static id = "interactions.publish";
-
-	constructor(client: ExtendedClient) {
+export default class PublishModule implements Module {
+	load(client: ExtendedClient) {
 		client.on(Events.ClientReady, () => this.publish(client));
 	}
 

@@ -1,13 +1,11 @@
-// Internal
-export * as logger from "./core/logger";
-export * as status from "./core/status";
+import Module from "../classes/Module";
 
-// Command Handler
-export * as message from "./interactions/command";
+import LoggerModule from "./core/logger";
+import StatusModule from "./core/status";
+import AutocompleteModule from "./interactions/autocomplete";
+import CommandModule from "./interactions/command";
+import PublishModule from "./interactions/publish";
 
-// Autocomplete
-export * as autocomplete from "./interactions/autocomplete";
-
-// Command Publisher
-// Always keep this last, to ensure command publishing works as expected.
-export * as publish from "./interactions/publish";
+// Hack: apparently, typescript doesn't think Module[] is an appropriate type.
+type Modules = { new(): Module; }[];
+export const modules: Modules = [LoggerModule, StatusModule, CommandModule, AutocompleteModule, PublishModule];

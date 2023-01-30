@@ -1,4 +1,4 @@
-import { ApplicationCommandDataResolvable, AutocompleteInteraction, BaseInteraction } from "discord.js";
+import { ApplicationCommandData, AutocompleteInteraction, BaseInteraction } from "discord.js";
 import ExtendedClient from "./Client";
 
 export enum CommandType {
@@ -9,7 +9,7 @@ export enum CommandType {
 
 export interface Command {
 	type: CommandType;
-	data: ApplicationCommandDataResolvable;
+	data: ApplicationCommandData;
 	run(interaction: BaseInteraction, client?: ExtendedClient): void | Promise<void>;
 	autocomplete?(interaction: AutocompleteInteraction): void | Promise<void>;
 }
