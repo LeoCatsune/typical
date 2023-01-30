@@ -10,6 +10,6 @@ export enum CommandType {
 export interface Command {
 	type: CommandType;
 	data: ApplicationCommandDataResolvable;
-	run(interaction: BaseInteraction, client?: ExtendedClient): any;
-	autocomplete?(interaction: AutocompleteInteraction): any;
+	run(interaction: BaseInteraction, client?: ExtendedClient): void | Promise<void>;
+	autocomplete?(interaction: AutocompleteInteraction): void | Promise<void>;
 }
